@@ -63,9 +63,14 @@ def print_evaluation_results(metrics, class_names):
     print(f"Accuracy:              {metrics['accuracy']:.3f} (The percentage of correctly classified samples.)")
     print(f"F1 Score:              {metrics['f1_score']:.3f} (A balance of precision and recall, useful for imbalanced datasets.)")
 
-    # Plot the confusion matrix
+    # Print the confusion matrix
     print("\n### Confusion Matrix ###\n")
-    plot_confusion_matrix(metrics['confusion_matrix'], class_names)
+    cm = metrics['confusion_matrix']
+    print("Confusion Matrix:")
+    print(cm)
+    
+    # Plot the confusion matrix
+    plot_confusion_matrix(cm, class_names)
 
     
 # Function to compute evaluation metrics
